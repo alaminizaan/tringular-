@@ -6,8 +6,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # Create a list of all exchanges supporting EOS
-    exchanges = [exchange for exchange in ccxt.exchanges if 'eos' in ccxt.exchanges[exchange].load_markets()]
-
+    
+     exchanges = [exchange for exchange in ccxt.exchanges if 'eos' in ccxt.__dict__[exchange].load_markets()]
     # Get the EOS/USDT ticker from each exchange
     eos_prices = []
     for exchange_id in exchanges:
